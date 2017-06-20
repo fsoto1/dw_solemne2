@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Pauta solemne</title>
+    <title>{% block title %}{{ settings.SETTING }}{% endblock %}</title>
     {% load staticfiles %}
     <!-- Bootstrap -->
     <link href="{% static 'noticias/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -20,8 +20,7 @@
   </head>
   <body>
   <header>
-
-    <div class="container">
+  <div class="container">
       <div class="row">
         <!-- <div class="col-md-12">
           <a href="index.html" class="brand">
@@ -72,69 +71,10 @@
       </div>
     </div>
   </header>
-  <section>
-    <div class="container">
-      <div class="col-lg-9 col-sm-12">
-        <div class="well row">
+  
+    {% block content %}
 
-          <h3>Bienvenido!</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab, adipisci tempora velit mollitia est consequuntur laborum, ratione delectus quis iure, hic veritatis eligendi molestiae. Fugit porro dignissimos, sequi quam?</p>
-          <p class="text-right"><button class="btn btn-primary btn-lg">Inscribete!</button></p>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 aside">
-            <div class="row">
-              <div class="col-sm-4 col-lg-12">                
-                <img src="http://placehold.it/300x200" alt="" class="img-thumbnail">
-              </div>
-              <div class="col-sm-8 col-lg-12">            
-                <h4>Lorem ipsum dolor sit amet</h4>
-                <p class="text-justify">Consectetur adipisicing elit. Nisi molestias voluptatum vitae debitis voluptatibus magni perspiciatis voluptate laboriosam, totam reiciendis? Facere accusamus delectus fuga ipsum veritatis consectetur excepturi magni omnis.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="row">
-              <div class="col-xs-6 col-sm-4">
-                <img src="http://placehold.it/500x300" alt="" class="img-responsive img-thumbnail">
-                <p><a href="noticia_detalle.html">Consectetur adipisicing elit. </a></p>
-                <p><span class="label label-info">Noticias</span></p>
-              </div>
-              <div class="col-xs-6 col-sm-4">
-                <img src="http://placehold.it/500x300" alt="" class="img-responsive img-thumbnail">
-                <p><a href="noticia_detalle.html">Nisi molestias voluptatum vitae </a></p>
-                <p><span class="label label-info">Educación</span></p>
-              </div>
-              <div class="col-xs-6 col-sm-4">
-                <img src="http://placehold.it/500x300" alt="" class="img-responsive img-thumbnail">
-                <p><a href="noticia_detalle.html">Voluptatum vitae debitis voluptatibus</a></p>
-                <p><span class="label label-info">Noticias</span></p>
-              </div>              
-
-              <div class="col-xs-6 col-sm-4">
-                <img src="http://placehold.it/500x300" alt="" class="img-responsive img-thumbnail">
-                <p><a href="noticia_detalle.html">Molestias voluptatum vitae debitis</a></p>
-                <p><span class="label label-info">Educación</span></p>
-              </div>
-              <div class="col-xs-6 col-sm-4">
-                <img src="http://placehold.it/500x300" alt="" class="img-responsive img-thumbnail">
-                <p><a href="noticia_detalle.html">Nisi molestias voluptatum</a></p>
-                <p><span class="label label-info">Educación</span></p>
-              </div>
-              <div class="col-xs-6 col-sm-4">
-                <img src="http://placehold.it/500x300" alt="" class="img-responsive img-thumbnail">
-                <p><a href="noticia_detalle.html">Voluptatibus consectetur adipisicing elit</a></p>
-                <p><span class="label label-info">Educación</span></p>
-              </div>              
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 visible-lg">
-        <img src="http://placehold.it/400x800" alt="" class="img-responsive">
-      </div>
-    </div>
-  </section>
+    {% endblock %}    
 
   <footer>
     <div class="container">
