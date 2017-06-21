@@ -1,5 +1,8 @@
 from django.db import models
 
+def upload_location(instance, filename):
+	return "%s/%s" %(instance.id, filename)
+
 class Categoria(models.Model):
 	nombre_categoria = models.CharField(max_length=50)
 
@@ -9,14 +12,18 @@ class Categoria(models.Model):
 	def __str__(self):
 		return self.nombre_categoria
 
+	class Meta:
+		ordering = ["nombre_categoria"]
+
 class Noticia(models.Model):
-	titulo = models.CharField(max_length=50)
+	titulo = models.CharField(max_length=150)
 	contenido = models.TextField()
-	imagen = models.ImageField(null=True, blank=True, width_field='ancho_imagen',height_field='alto_imagen')
+	imagen = models.ImageField(upload_to="", null=True, blank=True, width_field='ancho_imagen',height_field='alto_imagen')
 	alto_imagen = models.IntegerField(default=0)
 	ancho_imagen = models.IntegerField(default=0)
 	fecha = models.DateField()
 	categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+	destacada = models.BooleanField()
 
 	def __unicode__(self):
 		return self.titulo
@@ -25,17 +32,4 @@ class Noticia(models.Model):
 		return self.titulo
 
 	class Meta:
-		ordering = ["fecha"]
-
-class Destacada(models.Model):
-	noticia = models.ForeignKey(Noticia, on_delete=models.CASCADE)
-	fecha_destacada = models.DateField()
-
-	def __unicode__(self):
-		return self.fecha_destacada
-
-	def __str__(self):
-		return  self.fecha_destacada 
-
-	class Meta:
-		ordering = ["fecha_destacada"]
+		ordering = ["-fecha"]
