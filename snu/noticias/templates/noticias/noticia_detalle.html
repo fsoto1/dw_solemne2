@@ -5,14 +5,10 @@
   <section>
     <div class="container">
       <div class="col-lg-12">
-        <h1>Consectetur adipisicing elit <small>Educación</small></h1>
-        <p><em>Fecha publicación: 19/06/2017</em></p>
-        <img src="http://placehold.it/200x200" alt="" class="img-responsive img-thumbnail pull-left img-margin-right">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti ex dolore quo cum optio tempore eum alias totam nihil odio nobis molestias saepe consequuntur obcaecati, quaerat doloremque facilis, amet rem.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti ex dolore quo cum optio tempore eum alias totam nihil odio nobis molestias saepe consequuntur obcaecati, quaerat doloremque facilis, amet rem.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti ex dolore quo cum optio tempore eum alias totam nihil odio nobis molestias saepe consequuntur obcaecati, quaerat doloremque facilis, amet rem.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti ex dolore quo cum optio tempore eum alias totam nihil odio nobis molestias saepe consequuntur obcaecati, quaerat doloremque facilis, amet rem.</p>
-          
+        <h1>{{noticia.titulo}} <small>{{noticia.categoria}}</small></h1>
+        <p><em>Fecha publicación: {{noticia.fecha}}</em></p>
+        <img src="{{noticia.imagen.url}}" alt="" class="img-responsive img-thumbnail pull-left img-margin-right">
+        {{noticia.contenido}}          
       </div>
 
     </div>
