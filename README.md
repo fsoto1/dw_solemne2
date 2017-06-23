@@ -6,11 +6,9 @@ Segunda Solemne para el curso Desarrollo Web
 
 Basado en Django Framework, contiene las siguientes funcionalidades
 
-  - Ver noticias
-  - Administrar noticas
-  - Agregar noticias
-
-
+  - Ver noticia destacada y noticias recientes
+  - Administrar noticias desde django
+  - Visitar las noticias de la página
 
 
 ### Tecnologías
@@ -21,3 +19,10 @@ Se combinan distintos proyectos open source:
 * [Bootstrap](http://getbootstrap.com/) - HTML, CSS y JS Responsive Framework
 * [jQuery](http://jquery.com) - Librería JS
 * [GitHub](https://github.com) - Versionamiento de código
+
+### Credenciales
+
+Para ingresar al administrador, usar las siguientes credenciales:
+
+user: admin
+pass: admin123
