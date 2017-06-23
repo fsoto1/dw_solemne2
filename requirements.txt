@@ -1,0 +1,4 @@
+Django==1.11.2
+pillow==4.1.1
+python-memcached==1.58
+-e git+https://github.com/mariocesar/sorl-thumbnail.git#egg=sorl-thumbnail
