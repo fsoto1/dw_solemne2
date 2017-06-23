@@ -1,4 +1,5 @@
 from django.db import models
+from sorl.thumbnail import ImageField
 
 def upload_location(instance, filename):
 	return "%s/%s" %(instance.id, filename)
