@@ -19,7 +19,7 @@
                       <img src="{{d.imagen.url}}" alt="" class="img-thumbnail">
                     </div>
                     <div class="col-sm-8 col-lg-12">          
-                      <h4>{{d.titulo}}</h4>
+                      <h4><a href="{% url 'noticias:detalle' %}?id={{d.id}}">{{d.titulo}}</a></h4>
                       <p class="text-justify">{{d.contenido}}</p>
                     </div>
                  {% endfor %}  
