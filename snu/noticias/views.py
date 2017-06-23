@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Noticia
+from django.http import Http404
 # Create your views here.
 
 def index(request):
@@ -8,7 +9,10 @@ def index(request):
 	return render(request, 'noticias/home.html', {'all_noticia': all_noticia, 'destacada': destacada})
 
 def detalle(request):
-	query = request.GET.get("id")
-	if query:
-		noticia = Noticia.objects.get(id = query)
+	try:
+		query = request.GET.get("id")
+		if query:
+			noticia = Noticia.objects.get(id = query)
+	except Noticia.DoesNotExist:
+			raise Http404("La página no fue encontrada")
 	return render(request, 'noticias/noticia_detalle.html', {'noticia': noticia})

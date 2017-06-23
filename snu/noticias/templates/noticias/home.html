@@ -23,8 +23,8 @@
                       {% endthumbnail %}
                     </div>
                     <div class="col-sm-8 col-lg-12">          
-                      <h4><a href="{% url 'noticias:detalle' %}?id={{d.id}}">{{d.titulo}}</a></h4>
-                      <p class="text-justify">{{d.contenido}}</p>
+                      <h4><a href="{% url 'noticias:detalle' %}?id={{d.id}}">{{d.titulo|truncatechars:100}}</a></h4>
+                      <p class="text-justify">{{d.contenido|truncatechars:350}}</p>
                     </div>
                  {% endfor %}  
               </div>
@@ -36,7 +36,7 @@
                   {% thumbnail noticia.imagen "500x300" crop="center" as im %} 
                     <img src="{{im.url}}" width="{{ im.width }}" height="{{ im.height }}" alt="{{noticia.titulo}}" class="img-responsive img-thumbnail">
                   {% endthumbnail %}
-                  <p><a href="{% url 'noticias:detalle' %}?id={{noticia.id}}">{{noticia.titulo}} </a></p>
+                  <p><a href="{% url 'noticias:detalle' %}?id={{noticia.id}}">{{noticia.titulo|truncatechars:60}} </a></p>
                   <p><span class="label label-info">{{noticia.categoria}}</span></p>
                 </div>        
               {% endfor %}           
